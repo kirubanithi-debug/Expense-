@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useExpenses from '../hooks/useExpenses';
 import { CATEGORIES, getCategoryById } from '../data/categories';
 import { 
@@ -15,6 +15,14 @@ const Expenses = () => {
   const [showModal, setShowModal] = useState(false);
   const [editingExpense, setEditingExpense] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    if (location.search) {
+      navigate('/expenses', { replace: true });
+    }
+  };
 
   const [formData, setFormData] = useState({
     amount: '', category: 'food', description: '', date: new Date().toISOString().split('T')[0]
@@ -29,7 +37,7 @@ const Expenses = () => {
       setTimeout(() => {
         setFormData(prev => ({
           ...prev,
-          category: autoAddCat,
+          category: autoAddCat === 'true' ? 'food' : autoAddCat,
           date: autoAddDate || new Date().toISOString().split('T')[0]
         }));
         setShowModal(true);
@@ -71,7 +79,7 @@ const Expenses = () => {
     const data = { ...formData, amount: parseFloat(formData.amount) };
     if (editingExpense) updateExpense(editingExpense.id, data);
     else addExpense(data);
-    setShowModal(false);
+    handleCloseModal();
   };
 
   return (
@@ -173,7 +181,7 @@ const Expenses = () => {
           <div className="modal animate-in" style={{ background: 'var(--bg-secondary)', border: '1px solid var(--border-color)' }}>
             <div style={{ padding: '24px', background: 'linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))', color: 'white', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h3 style={{ fontSize: '1.1rem', fontWeight: 800 }}>{editingExpense ? 'Modify Ledger Entry' : 'Manual History Recording'}</h3>
-              <button onClick={() => setShowModal(false)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}><X size={20} /></button>
+              <button onClick={handleCloseModal} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}><X size={20} /></button>
             </div>
             <form onSubmit={handleSubmit} style={{ padding: '32px', display: 'grid', gap: 24 }}>
               <div className="form-group">
@@ -200,7 +208,7 @@ const Expenses = () => {
                 <input type="text" className="form-input" placeholder="e.g. Quarterly Utility Payment" value={formData.description} onChange={(e) => setFormData({ ...formData, description: e.target.value })} />
               </div>
               <div style={{ marginTop: 12, display: 'flex', gap: 12 }}>
-                <button type="button" className="btn btn-secondary" style={{ flex: 1 }} onClick={() => setShowModal(false)}>Cancel</button>
+                <button type="button" className="btn btn-secondary" style={{ flex: 1 }} onClick={handleCloseModal}>Cancel</button>
                 <button type="submit" className="btn btn-primary" style={{ flex: 2 }}>Commit Transaction</button>
               </div>
             </form>

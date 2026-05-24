@@ -170,6 +170,15 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; font-weight: 700; color: 
 .fab-voice:hover { transform: scale(1.1) translateY(-5px); }
 .fab-voice:active { transform: scale(0.95); }
 
+.fab-manual {
+  width: 50px; height: 50px; border-radius: 50%; background: var(--bg-tertiary);
+  color: var(--text-primary); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.1); 
+  cursor: pointer; transition: var(--transition);
+}
+.fab-manual:hover { transform: scale(1.1) translateY(-5px); background: var(--accent-secondary); border-color: var(--accent-secondary); color: white; }
+.fab-manual:active { transform: scale(0.95); }
+
 /* Chat Assistant Mobile Scroll Fix */
 @media (max-width: 640px) {
   .chat-messages-container { padding-bottom: 120px !important; }
@@ -186,3 +195,25 @@ h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; font-weight: 700; color: 
 @keyframes slide-up { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 @keyframes pulse-mic { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
 .fab-voice.listening { animation: pulse-mic 1.5s infinite ease-in-out; }
+
+/* Forms & Modals */
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+.form-input { 
+  width: 100%; padding: 12px 16px; border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+  color: var(--text-primary); font-family: inherit; font-size: 0.9rem;
+  transition: var(--transition);
+}
+.form-input:focus { outline: none; border-color: var(--accent-primary); background: rgba(255, 255, 255, 0.05); }
+
+.modal-overlay {
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 5000; padding: 20px;
+}
+.modal {
+  width: 100%; max-width: 500px;
+  background: var(--bg-secondary); border-radius: 24px;
+  overflow: hidden; box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}

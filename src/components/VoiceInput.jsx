@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Mic, Loader } from 'lucide-react';
+import { Mic, Loader, Plus } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import useVoiceInput from '../hooks/useVoiceInput';
 import { extractExpenseData } from '../utils/expenseParser';
 import { getCategoryById } from '../data/categories';
@@ -10,6 +11,7 @@ const VoiceFAB = ({ onAdd, className }) => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [status, setStatus] = useState('');
   const { showNotification } = useNotification();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isListening && transcript && !isProcessing) {
@@ -63,7 +65,14 @@ const VoiceFAB = ({ onAdd, className }) => {
   };
 
   return (
-    <div className={`voice-wrapper ${className || ''}`}>
+    <div className={`voice-wrapper ${className || ''}`} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <button 
+        className="fab-manual" 
+        onClick={() => navigate('/expenses?autoAdd=true')}
+        title="Add Manual Entry"
+      >
+        <Plus size={24} />
+      </button>
       {/* Automated Transcription Display */}
       {(isListening || transcript || status === 'processing') && (
         <div className="voice-transcript animate-in" style={{ maxWidth: 280, boxShadow: 'var(--shadow-md)' }}>

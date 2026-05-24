@@ -110,6 +110,10 @@ export const extractExpenseData = (text) => {
     const lastWeek = new Date(today);
     lastWeek.setDate(lastWeek.getDate() - 7);
     result.date = lastWeek.toISOString().split('T')[0];
+  } else if (lower.includes('day before yesterday') || lower.includes('முந்தாநாள்')) {
+    const dby = new Date(today);
+    dby.setDate(dby.getDate() - 2);
+    result.date = dby.toISOString().split('T')[0];
   }
 
   if (lower.includes('morning') || lower.includes('காலை')) {
@@ -128,10 +132,10 @@ export const extractExpenseData = (text) => {
   let desc = normalizedText
     .replace(/(?:i\s+)?(?:spent|paid|gave|cost|bought)\s*/i, '')
     .replace(/(?:rs\.?|₹|rupees?|inr)\s*\d+(?:,\d{3})*(?:\.\d{1,2})?/gi, '')
-    .replace(/\d+(?:,\d{3})*(?:\.\d{1,2})?\s*(?:rs\.?|₹|rupees?|inr|bucks|ரூபாய்|ரூ)/gi, '')
+    .replace(/\d+(?:,\d{3})*(?:\.\d{1,2})?\s*(?:rs\.?|₹|rupees?|inr|bucks|ரூபாய்|ரூ|ரூபா|காசு)/gi, '')
     .replace(/\b\d+(?:,\d{3})*(?:\.\d{1,2})?\b/g, '') // Remove remaining digits
-    .replace(/(?:today|yesterday|this morning|this evening|tonight|last week)/gi, '')
-    .replace(/(?:on|for|at|in|to)\s*$/i, '') // Trailing prepositions
+    .replace(/(?:today|yesterday|day before yesterday|this morning|this evening|tonight|last week|இன்று|நேற்று|முந்தாநாள்|காலை|மதியம்|மாலை|இரவு)/gi, '')
+    .replace(/(?:on|for|at|in|to|க்காக|க்கு)\s*$/i, '') // Trailing prepositions
     .replace(/^\s*(?:on|for|at|in|to)\s+/i, '') // Leading prepositions
     .trim();
   

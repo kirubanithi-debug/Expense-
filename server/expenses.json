@@ -1,5 +1,14 @@
 [
   {
+    "id": "1779593824678m0x1o74a8",
+    "amount": 100,
+    "category": "food",
+    "description": "test API",
+    "date": "2026-05-24",
+    "time": "09:00",
+    "createdAt": "2026-05-24T03:37:04.678Z"
+  },
+  {
     "id": "1779592983891j210tahji",
     "amount": 400,
     "category": "transport",
