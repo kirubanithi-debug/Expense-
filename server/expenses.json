@@ -1,5 +1,16 @@
 [
   {
+    "id": "17795945371653oowcefmq",
+    "amount": 1000,
+    "category": "groceries",
+    "description": "Grocery",
+    "date": "2026-05-24",
+    "time": "09:18",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T03:48:57.173Z"
+  },
+  {
     "id": "1779593824678m0x1o74a8",
     "amount": 100,
     "category": "food",
