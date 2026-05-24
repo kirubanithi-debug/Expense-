@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1779592983891j210tahji",
+    "amount": 400,
+    "category": "transport",
+    "description": "Petrol",
+    "date": "2026-05-24",
+    "time": "08:53",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T03:23:03.891Z"
+  },
+  {
+    "id": "1779590391733ygxmkko5c",
+    "amount": 1000,
+    "category": "entertainment",
+    "description": "Movie",
+    "date": "2026-05-24",
+    "time": "08:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:39:51.733Z"
+  },
+  {
+    "id": "1779590382099dzvr4cck4",
+    "amount": 400,
+    "category": "other",
+    "description": "Other Expense",
+    "date": "2026-05-24",
+    "time": "08:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:39:42.099Z"
+  },
+  {
+    "id": "1779590364600919qt78fm",
+    "amount": 1000,
+    "category": "entertainment",
+    "description": "Entertainment",
+    "date": "2026-05-24",
+    "time": "08:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:39:24.600Z"
+  },
+  {
+    "id": "1779590352748b66p406rf",
+    "amount": 1200,
+    "category": "groceries",
+    "description": "Grocery",
+    "date": "2026-05-24",
+    "time": "08:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:39:12.748Z"
+  },
+  {
+    "id": "1779590343280r3rh2rnk7",
+    "amount": 500,
+    "category": "transport",
+    "description": "Petrol",
+    "date": "2026-05-24",
+    "time": "08:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:39:03.280Z"
+  },
+  {
+    "id": "1779590327526wtfskdz79",
+    "amount": 500,
+    "category": "other",
+    "description": "Other Expense",
+    "date": "2026-05-24",
+    "time": "08:08",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T02:38:47.527Z"
+  },
+  {
+    "id": "1779586792806k32rud48m",
+    "amount": 200,
+    "category": "transport",
+    "description": "Petrol 200",
+    "date": "2026-05-24",
+    "time": "07:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T01:39:52.806Z"
+  },
+  {
+    "id": "17795867512009lgzosk8z",
+    "amount": 200,
+    "category": "other",
+    "description": "200",
+    "date": "2026-05-24",
+    "time": "07:09",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-05-24T01:39:11.200Z"
+  },
+  {
+    "id": "1775286138053gapnznrev",
+    "amount": 100,
+    "category": "groceries",
+    "description": "100 for grocery",
+    "date": "2026-04-04",
+    "time": "12:32",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-04-04T07:02:18.053Z"
+  },
+  {
+    "id": "17752861262844a225fkhv",
+    "amount": 2004,
+    "category": "other",
+    "description": "I still 2004",
+    "date": "2026-04-04",
+    "time": "12:32",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-04-04T07:02:06.284Z"
+  },
+  {
+    "id": "17744348782629jd69w97d",
+    "amount": 3000,
+    "category": "groceries",
+    "description": "I spend 3000 for glossary",
+    "date": "2026-03-25",
+    "time": "16:04",
+    "source": "voice",
+    "userId": "1774428293987",
+    "createdAt": "2026-03-25T10:34:38.262Z"
+  }
+]
